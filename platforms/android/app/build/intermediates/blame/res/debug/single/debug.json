@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ec5186c810243f532b24f2dd39e84425\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
-    },
-    {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6a22c4b3236a1aa2088a2a9660231902\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0a4a54461db46279ed8c7981fb0bf5e7\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -84,12 +84,12 @@
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ec5186c810243f532b24f2dd39e84425\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ec5186c810243f532b24f2dd39e84425\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_dummy_infowindow.xml.flat",
         "source": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\src\\main\\res\\layout\\dummy_infowindow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ec5186c810243f532b24f2dd39e84425\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
@@ -148,12 +148,12 @@
         "source": "C:\\Users\\Meith\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ec5186c810243f532b24f2dd39e84425\\res\\drawable\\notification_bg.xml"
     },
     {
-        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
-        "source": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
-    },
-    {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
         "source": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\src\\main\\res\\drawable-port-ldpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
+        "source": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
     },
     {
         "merged": "C:\\Users\\Meith\\Documents\\Projet\\Cordova\\Appli\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",

@@ -2,15 +2,13 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width">
-    <script type="text/javascript" src="cordova.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSu394Zkp234jBXDpZMMN8NU4SdAkgKLo"
     async defer></script>
     
     <script type="text/javascript">
     document.addEventListener("deviceready", function() {
       
-      var div = document.getElementById("map_canvas");
-
+      
       // Create a Google Maps native view under the map_canvas div.
       navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
         function onSuccess(position) {
@@ -23,26 +21,6 @@
           zoom: 17
         });
       
-        // Move to the position with animation
-        
-        var options = {
-          camera: {
-            target: {lat: lat, lng: lang},
-          zoom: 17,
-          }
-        };
-        var map = plugin.google.maps.Map.getMap(div,options);
-
-        // Add a maker
-        var marker = map.addMarker({
-          position: {lat: lat, lng: lang},
-          title: "The Current Location",
-          snippet: "Snippet Here",
-          animation: plugin.google.maps.Animation.BOUNCE
-        });
-
-        // Show the info window
-        marker.showInfoWindow();
      }
 function onError(error) {
 alert('code: ' + error.code + '\n' +
@@ -81,10 +59,6 @@ alert('code: ' + error.code + '\n' +
           Maecenas vehicula arcu erat, eu cursus nulla pharetra quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin accumsan lobortis lorem et facilisis. Praesent mattis mauris ac tristique bibendum. Donec nisl velit, lacinia eu volutpat sed, aliquet et quam. Quisque ante eros, pharetra non risus vel, vehicula cursus urna. Sed pretium nunc et leo finibus auctor. Suspendisse facilisis, leo ac semper mollis, orci sapien pharetra purus, feugiat mattis dolor lectus et ante.</p>
     </div>
     <div><p>1825 Rue Paul le MoyneTrois-Rivières, QC</p>
-      <p>Native plugin</p>
-      <div id="map_canvas">
-        <button id="buttonMaps">Open Maps !</button>
-      </div>
       <p>JS Plugin</p>
       <div id="map2"></div>
     </div>

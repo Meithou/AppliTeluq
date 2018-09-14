@@ -12,12 +12,6 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-googlemaps": {
-      "API_KEY_FOR_ANDROID": "AIzaSyCSu394Zkp234jBXDpZMMN8NU4SdAkgKLo",
-      "PLAY_SERVICES_VERSION": "15.0.1",
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
-      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {}
