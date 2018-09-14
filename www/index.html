@@ -11,7 +11,7 @@
       
       
       // Create a Google Maps native view under the map_canvas div.
-      navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
+      navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 10000 });
         function onSuccess(position) {
         var lat=position.coords.latitude;
         var lang=position.coords.longitude;
@@ -24,14 +24,23 @@
       
      }
 function onError(error) {
+  var map2;
+        map2 = new google.maps.Map(document.getElementById('map2'), {
+          center: {lat: -73.6088225647, lng: 45.5366945199},
+          zoom: 17
+        });
 alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
 }
 
     var button2 = document.getElementById("buttonMaps");
     button2.addEventListener("click", function() {
+                             if (iOS) {
+                             window.open('maps://?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_system');
+                             }
+                             else {
   window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_blank');
-
+                             }
       });
 
     }, false);
@@ -52,7 +61,7 @@ alert('code: ' + error.code + '\n' +
     </style>
   </head>
   <body>
-    <h1>Event test</h1>
+    <h1>Event test IOS</h1>
     <div>
       <h3>Description</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo convallis magna id vestibulum. Nullam faucibus interdum lectus et luctus. In viverra hendrerit luctus. Nullam massa urna, porttitor at risus id, sodales bibendum justo. Aenean nec scelerisque urna. Praesent nisl dolor, scelerisque eget dui eu, lacinia pharetra velit. Nullam molestie rhoncus felis a elementum. Cras leo risus, efficitur quis turpis at, bibendum convallis tortor. Nunc ut egestas turpis. Sed auctor et enim et rhoncus.
@@ -62,6 +71,7 @@ alert('code: ' + error.code + '\n' +
     <div><p>1825 Rue Paul le MoyneTrois-Rivières, QC</p>
       <p>JS Plugin</p>
       <div id="map2"></div>
+      <button id="buttonMaps">Open Maps</button>
     </div>
   </body>
 </html>
