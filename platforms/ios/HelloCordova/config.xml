@@ -39,6 +39,7 @@
             <string>NSLocationAlwaysUsageDescription</string>
         </array>
     </gap:config-file>
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

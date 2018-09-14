@@ -14,15 +14,31 @@
       navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 10000 });
         function onSuccess(position) {
         var lat=position.coords.latitude;
+                              var address="Westmount, QC";
         var lang=position.coords.longitude;
-        
+        var myLatLng = {lat: lat, lng: lang};
         var map2;
         map2 = new google.maps.Map(document.getElementById('map2'), {
-          center: {lat: lat, lng: lang},
-          zoom: 17
+          center: myLatLng,
+          zoom: 10
         });
-      
-     }
+         var geocoder = new google.maps.Geocoder();
+         var markerD = new google.maps.Marker({
+         position: myLatLng,
+         map: map2,
+         title: 'Current Location'
+          });
+          geocoder.geocode({'address': address}, function(results, status) {
+             if (status === 'OK') {
+             map2.setCenter(results[0].geometry.location);
+             var markerDest = new google.maps.Marker({
+              map: map2,
+              position: results[0].geometry.location
+              });
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+             }     });
+            }
 function onError(error) {
   var map2;
         map2 = new google.maps.Map(document.getElementById('map2'), {
@@ -33,13 +49,17 @@ alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
 }
 
-    var button2 = document.getElementById("buttonMaps");
+    var button2 = document.getElementById('buttonMaps');
     button2.addEventListener("click", function() {
+                             var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
                              if (iOS) {
-                             window.open('maps://?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_system');
+                             window.open('maps:daddr=Westmount,+QC&saddr=Current+Location&directionsmode=transit', '_blank')
+                             
                              }
                              else {
-  window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_blank');
+                             
+  window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivieres,+QC+G8Z+2V8&z=12', '_blank');
                              }
       });
 
@@ -68,7 +88,7 @@ alert('code: ' + error.code + '\n' +
 
           Maecenas vehicula arcu erat, eu cursus nulla pharetra quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin accumsan lobortis lorem et facilisis. Praesent mattis mauris ac tristique bibendum. Donec nisl velit, lacinia eu volutpat sed, aliquet et quam. Quisque ante eros, pharetra non risus vel, vehicula cursus urna. Sed pretium nunc et leo finibus auctor. Suspendisse facilisis, leo ac semper mollis, orci sapien pharetra purus, feugiat mattis dolor lectus et ante.</p>
     </div>
-    <div><p>1825 Rue Paul le MoyneTrois-Rivières, QC</p>
+    <div><p>Westmount, QC</p>
       <p>JS Plugin</p>
       <div id="map2"></div>
       <button id="buttonMaps">Open Maps</button>
