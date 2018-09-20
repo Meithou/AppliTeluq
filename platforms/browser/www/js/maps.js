@@ -1,65 +1,71 @@
-document.addEventListener("deviceready", function() {
-  var div = document.getElementById("map_canvas");
 
+function initmap(){
+      
   // Create a Google Maps native view under the map_canvas div.
-  var map = plugin.google.maps.Map.getMap(div);
-
-  // If you click the button, do something...
-  var button = document.getElementById("button");
-  button.addEventListener("click", function() {
-  navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
+  alert("initmap started");
+  navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 10000 });
     function onSuccess(position) {
     var lat=position.coords.latitude;
-    var lang=position.coords.longitude;
-    // Move to the position with animation
-    map.animateCamera({
-      target: {lat: lat, lng: lang},
-      zoom: 17,
-      tilt: 60,
-      bearing: 140,
-      duration: 5000
+    var address="Westmount, QC";
+    var long=position.coords.longitude;
+    var myLatLng = new google.maps.LatLng(lat,long);
+    var map2 = new google.maps.Map(document.getElementById('map2'), {
+      center: myLatLng,
+      zoom: 12
     });
-
-    // Add a maker
-    var marker = map.addMarker({
-      position: {lat: lat, lng: lang},
-      title: "The Current Location",
-      snippet: "Snippet Here",
-      animation: plugin.google.maps.Animation.BOUNCE
-    });
-
-    // Show the info window
-    marker.showInfoWindow();
- }
+    var bounds = new google.maps.LatLngBounds();
+    var markers = new Array();
+    var geocoder = new google.maps.Geocoder();
+    var markerDest;
+    var markerStart = new google.maps.Marker({
+      map: map2,
+      position: new google.maps.LatLng(lat,long)
+    
+      });
+      markers.push(markerStart);
+      geocoder.geocode({'address': address}, function(results, status) {
+         if (status === 'OK') {
+          markerDest = new google.maps.Marker({
+          map: map2,
+          position: results[0].geometry.location
+          });
+          markers.push(markerDest);
+          markers.forEach(function(mar){
+                bounds.extend(mar.position);
+              });
+           // Work in progress to auto zoom and position camera between points
+          map2.fitBounds(bounds);
+          map2.panToBounds(bounds);
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+         }     });
+         //  Create a new viewpoint bound
+        //  Go through each...
+              //  Fit these bounds to the map
+              
+        }
 function onError(error) {
+var map2;
+    map2 = new google.maps.Map(document.getElementById('map2'), {
+      center: {lat: -73.6088225647, lng: 45.5366945199},
+      zoom: 17
+    });
 alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
 }
-  });
-var button2 = document.getElementById("buttonMaps");
+
+var button2 = document.getElementById('buttonMaps');
 button2.addEventListener("click", function() {
-  navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
-    function onSuccess(position) {
-    var lat2=position.coords.latitude;
-    var lang2=position.coords.longitude;
-    var geocoords2 = lat2 + ',' + lang2;
-    var marker2 = map.addMarker({
-      position: {lat: lat2, lng: lang2},
-      title: "Button Pressed",
-      snippet: "Snippet Here",
-      animation: plugin.google.maps.Animation.BOUNCE
-    });
+                         var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-    // Show the info window
-    marker2.showInfoWindow();
-var label2 = encodeURI('You are here !'); // encode the label!
-window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_blank');
-
- }
-function onError(error) {
-alert('code: ' + error.code + '\n' +
-'message: ' + error.message + '\n');
-}
+                         if (iOS) {
+                         window.open('maps:daddr=Westmount,+QC&saddr=Current+Location&directionsmode=transit', '_blank')
+                         
+                         }
+                         else {
+                         
+window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivieres,+QC+G8Z+2V8&z=12', '_blank');
+                         }
   });
 
-}, false);
+}

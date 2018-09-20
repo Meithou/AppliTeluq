@@ -2,67 +2,53 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/jquery-1.5.0.mobile.min.css" type="text/css" charset="utf-8" />
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSu394Zkp234jBXDpZMMN8NU4SdAkgKLo"
-    async defer></script>
-    
-    <script type="text/javascript">
-    document.addEventListener("deviceready", function() {
-      
-      
-      // Create a Google Maps native view under the map_canvas div.
-      navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
-        function onSuccess(position) {
-        var lat=position.coords.latitude;
-        var lang=position.coords.longitude;
-        
-        var map2;
-        map2 = new google.maps.Map(document.getElementById('map2'), {
-          center: {lat: lat, lng: lang},
-          zoom: 17
-        });
-      
-     }
-function onError(error) {
-alert('code: ' + error.code + '\n' +
-'message: ' + error.message + '\n');
-}
+    <script src="js/jquery-1.5.0.mobile.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 
-    var button2 = document.getElementById("buttonMaps");
-    button2.addEventListener("click", function() {
-  window.open('geo:0,0?q=1825+Rue+Paul+le+Moyne,+Trois-Rivières,+QC+G8Z+2V8&z=12', '_blank');
-
-      });
-
-    }, false);
-    </script>
     <style type="text/css">
-    #map_canvas { /* Must bigger size than 100x100 pixels */
-      width: 100%;
-      height: 500px;
-    }
-    #map2 { /* Must bigger size than 100x100 pixels */
-      width: 100%;
-      height: 500px;
-    }
-    button {
-      padding: .5em;
-      margin: .5em;
-    }
+
     </style>
   </head>
   <body>
-    <h1>Event test</h1>
-    <div>
-      <h3>Description</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo convallis magna id vestibulum. Nullam faucibus interdum lectus et luctus. In viverra hendrerit luctus. Nullam massa urna, porttitor at risus id, sodales bibendum justo. Aenean nec scelerisque urna. Praesent nisl dolor, scelerisque eget dui eu, lacinia pharetra velit. Nullam molestie rhoncus felis a elementum. Cras leo risus, efficitur quis turpis at, bibendum convallis tortor. Nunc ut egestas turpis. Sed auctor et enim et rhoncus.
+    <div id="loginPage" data-role="page">
 
-          Maecenas vehicula arcu erat, eu cursus nulla pharetra quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin accumsan lobortis lorem et facilisis. Praesent mattis mauris ac tristique bibendum. Donec nisl velit, lacinia eu volutpat sed, aliquet et quam. Quisque ante eros, pharetra non risus vel, vehicula cursus urna. Sed pretium nunc et leo finibus auctor. Suspendisse facilisis, leo ac semper mollis, orci sapien pharetra purus, feugiat mattis dolor lectus et ante.</p>
+        <div data-role="header">
+            <h1>Auth Demo</h1>
+        </div>
+    
+        <div data-role="content">	
+    
+            <form id="loginForm">
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username" />
+            </div>
+    
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="" placeholder="Password" />
+            </div>
+    
+            <input type="submit" value="Login" id="submitButton">
+            </form>
+            
+        </div>
+    
+        <div data-role="footer">
+        </div>
+    
     </div>
-    <div><p>1825 Rue Paul le MoyneTrois-Rivières, QC</p>
-      <p>JS Plugin</p>
-      <div id="map2"></div>
-      <button id="buttonMaps">Open Maps</button>
-    </div>
+    
+    <script>
+        $("#loginPage").live("pageinit", function(e) {
+            checkPreAuth();
+        });
+    </script>
+    
   </body>
 </html>
