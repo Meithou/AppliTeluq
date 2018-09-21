@@ -16,14 +16,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-        <string>We want your location!</string>
-    </edit-config>
-    <gap:config-file overwrite="false" parent="NSLocationAlwaysUsageDescription" platform="ios">
-        <array>
-            <string>NSLocationAlwaysUsageDescription</string>
-        </array>
-    </gap:config-file>
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
